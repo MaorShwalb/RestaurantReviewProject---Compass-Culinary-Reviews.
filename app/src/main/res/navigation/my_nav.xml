@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/openingScreenFragment">
+    <fragment
+        android:id="@+id/lobby"
+        android:name="com.example.finalprojectandroid1.Lobby"
+        android:label="lobby"
+        tools:layout="@layout/lobby" >
+        <action
+            android:id="@+id/action_lobby_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/from_up"
+            app:exitAnim="@anim/to_down"
+            app:popEnterAnim="@anim/from_down"
+            app:popExitAnim="@anim/to_up"
+            app:popUpTo="@id/lobby"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_lobby_to_reviews"
+            app:destination="@id/reviews"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/lobby"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_lobby_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/from_up"
+            app:exitAnim="@anim/to_down"
+            app:popEnterAnim="@anim/from_down"
+            app:popExitAnim="@anim/to_up"
+            app:popUpTo="@id/lobby"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.finalprojectandroid1.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_lobby"
+            app:destination="@id/lobby"
+            app:enterAnim="@anim/from_down"
+            app:exitAnim="@anim/to_up"
+            app:popEnterAnim="@anim/from_up"
+            app:popExitAnim="@anim/to_down"
+            app:popUpTo="@id/openingScreenFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_requestRegistration"
+            app:destination="@id/requestRegistration"
+            app:enterAnim="@anim/from_up"
+            app:exitAnim="@anim/to_down"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/openingScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/openingScreenFragment"
+        android:name="com.example.finalprojectandroid1.OpeningScreenFragment"
+        android:label="opening_screen_fragment"
+        tools:layout="@layout/opening_screen_fragment" >
+        <action
+            android:id="@+id/action_openingScreenFragment_to_lobby"
+            app:destination="@id/lobby"
+            app:enterAnim="@anim/from_up"
+            app:exitAnim="@anim/to_down"
+            app:popEnterAnim="@anim/from_down"
+            app:popExitAnim="@anim/to_up" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.finalprojectandroid1.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_lobby"
+            app:destination="@id/lobby"
+            app:enterAnim="@anim/from_down"
+            app:exitAnim="@anim/to_up"
+            app:popEnterAnim="@anim/from_up"
+            app:popExitAnim="@anim/to_down"
+            app:popUpTo="@id/openingScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardView"
+        android:name="com.example.finalprojectandroid1.AddCardReview"
+        android:label="add_card_view"
+        tools:layout="@layout/add_card_view" >
+        <action
+            android:id="@+id/action_addCardView_to_reviews"
+            app:destination="@id/reviews"
+            app:enterAnim="@anim/from_down"
+            app:exitAnim="@anim/to_up"
+            app:popEnterAnim="@anim/from_up"
+            app:popExitAnim="@anim/to_down"
+            app:popUpTo="@id/lobby"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviews"
+        android:name="com.example.finalprojectandroid1.Reviews"
+        android:label="all_cards_reviews"
+        tools:layout="@layout/all_cards_reviews" >
+        <action
+            android:id="@+id/action_reviews_to_addCardView"
+            app:destination="@id/addCardView"
+            app:enterAnim="@anim/from_up"
+            app:exitAnim="@anim/to_down"
+            app:popEnterAnim="@anim/from_down"
+            app:popExitAnim="@anim/to_up"
+            app:popUpTo="@id/reviews" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestRegistration"
+        android:name="com.example.finalprojectandroid1.RequestRegistration"
+        android:label="request_registration"
+        tools:layout="@layout/request_registration" />
+</navigation>
